@@ -65,7 +65,17 @@ const AuthForm = () => {
   const socialAction = (action: string) => {
     setIsLoading(true);
 
-    // Social action logic
+    signIn(action, { redirect: false })
+      .then((callback) => {
+        if (callback?.error) {
+          toast.error(`${action} login failed😔`);
+        }
+
+        if (callback?.ok && !callback?.error) {
+          toast.success("Logged in 👍");
+        }
+      })
+      .finally(() => setIsLoading(false));
   };
 
   return (
