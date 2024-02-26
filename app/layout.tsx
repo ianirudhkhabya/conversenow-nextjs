@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import ToasterProvider from "@/providers/ToasterProvider";
 import AuthProvider from "@/providers/AuthProvider";
+import ActiveStatus from "@/components/ActiveStatus";
 
 import "./globals.css";
 
@@ -43,6 +44,7 @@ export default function RootLayout({
       <body className={`${inter.className}`}>
         <AuthProvider>
           <ToasterProvider />
+          <ActiveStatus />
           {children}
         </AuthProvider>
       </body>

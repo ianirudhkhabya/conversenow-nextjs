@@ -10,6 +10,7 @@ import useOtherUser from "@/hooks/useOtherUser";
 import ConfirmModal from "./ConfirmModal";
 import Avatar from "@/components/Avatar";
 import AvatarGroup from "@/components/AvatarGroup";
+import useActiveList from "@/hooks/useActiveList";
 
 interface ThreeDotsProps {
   data: Conversation & { users: User[] };
@@ -29,13 +30,16 @@ const ThreeDots: React.FC<ThreeDotsProps> = ({ data, isOpen, onClose }) => {
     return data.name || otherUser.name;
   }, [data.name, otherUser.name]);
 
+  const { members } = useActiveList();
+  const isActive = members.indexOf(otherUser?.email!) !== -1;
+
   const statusText = useMemo(() => {
     if (data.isGroup) {
       return `${data.users.length} members`;
     }
 
-    return "Active";
-  }, [data]);
+    return isActive ? "Online" : "Offline";
+  }, [data, isActive]);
 
   return (
     <>
