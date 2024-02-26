@@ -24,8 +24,8 @@ export default function Home() {
       >
         <Image
           alt="Logo"
-          height={64}
-          width={64}
+          height={48}
+          width={48}
           className="mx-auto w-auto"
           src="/img/logo.png"
         />

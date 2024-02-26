@@ -20,7 +20,6 @@ const getConversationById = async (conversationId: string) => {
 
     return conversation;
   } catch (error: any) {
-    console.error("Internal Server Error: ", error.message);
     return null;
   }
 };

@@ -1,7 +1,13 @@
+import { Metadata } from "next";
+
 import Sidebar from "@/components/sidebar/Sidebar";
 import ConversationList from "./components/ConversationList";
 import getConversations from "@/actions/getConversations";
 import getUsers from "@/actions/getUsers";
+
+export const metadata: Metadata = {
+  title: "Chats",
+};
 
 export default async function ConversationsLayout({
   children,
@@ -14,7 +20,7 @@ export default async function ConversationsLayout({
   return (
     <div className="h-full">
       <Sidebar>
-        <ConversationList initialItems={conversations} users={users} />
+        <ConversationList initialChats={conversations} users={users} />
         <div className="h-full">{children}</div>
       </Sidebar>
     </div>

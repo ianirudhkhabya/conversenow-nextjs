@@ -1,11 +1,11 @@
 "use client";
 
 import axios from "axios";
-import useConversation from "@/hooks/useConversation";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import { CldUploadButton } from "next-cloudinary";
 import { HiPaperAirplane, HiPhoto } from "react-icons/hi2";
 
+import useConversation from "@/hooks/useConversation";
 import MessageInput from "./MessageInput";
 
 const Form = () => {
@@ -29,8 +29,8 @@ const Form = () => {
   };
 
   const handleUpload = (file: any) => {
-    axios.post(`/api//messages`, {
-      image: file?.info?.secure_url,
+    axios.post(`/api/messages`, {
+      image: file.info.secure_url,
       conversationId,
     });
   };

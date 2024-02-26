@@ -53,6 +53,7 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
       .catch(() => toast.error("Something went wrong!"))
       .finally(() => setIsLoading(false));
   };
+
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <form onSubmit={handleSubmit(onSubmit)}>

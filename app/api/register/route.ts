@@ -23,6 +23,6 @@ export async function POST(req: Request) {
 
     return NextResponse.json(user);
   } catch (error: any) {
-    return new NextResponse("Invalid Error", { status: 500 });
+    return new NextResponse("Invalid Server Error", { status: 500 });
   }
 }

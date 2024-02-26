@@ -1,9 +1,9 @@
 "use client";
 
-import { User } from "@prisma/client";
 import axios from "axios";
-import { useRouter } from "next/navigation";
 import { useCallback, useState } from "react";
+import { useRouter } from "next/navigation";
+import { User } from "@prisma/client";
 
 import Avatar from "@/components/Avatar";
 import LoadingModal from "@/components/modals/LoadingModal";

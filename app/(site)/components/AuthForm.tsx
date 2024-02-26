@@ -61,11 +61,11 @@ const AuthForm = () => {
       signIn("credentials", { ...data, redirect: false })
         .then((callback) => {
           if (callback?.error) {
-            toast.error("Invalid Credentials 😔");
+            toast.error("Invalid Credentials😔");
           }
 
           if (callback?.ok && !callback?.error) {
-            toast.success("Logged in 👍");
+            toast.success("Signed in👍");
             router.push("/users");
           }
         })
@@ -83,7 +83,7 @@ const AuthForm = () => {
         }
 
         if (callback?.ok && !callback?.error) {
-          toast.success("Logged in 👍");
+          toast.success("Logged in👍");
         }
       })
       .finally(() => setIsLoading(false));
@@ -145,7 +145,7 @@ const AuthForm = () => {
           />
           <div>
             <Button disabled={isLoading} fullWidth type="submit">
-              {variant === "LOGIN" ? "Login" : "Register"}
+              {variant === "LOGIN" ? "Sign in" : "Sign up"}
             </Button>
           </div>
         </form>
@@ -191,7 +191,7 @@ const AuthForm = () => {
           </div>
 
           <div onClick={toggleVariant} className="underline cursor-pointer">
-            {variant === "LOGIN" ? "Create an account" : "Login"}
+            {variant === "LOGIN" ? "Create an account" : "Sign in"}
           </div>
         </div>
       </div>

@@ -97,7 +97,7 @@ const SettingsModal: React.FC<SettingsModalProps> = ({
                   <Image
                     width={48}
                     height={48}
-                    src={image || currentUser?.image || "/img/placeholder.jpg"}
+                    src={image || currentUser?.image || "/img/placeholder.png"}
                     alt="Avatar"
                   />
                   <CldUploadButton

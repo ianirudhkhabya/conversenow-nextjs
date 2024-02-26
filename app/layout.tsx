@@ -10,7 +10,10 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Messenger Clone",
+  title: {
+    default: "Messenger Clone",
+    template: "%s | Messenger Clone",
+  },
   description: "Messenger chat application",
   icons: {
     icon: [
@@ -23,9 +26,9 @@ export const metadata: Metadata = {
       type: "image/png",
     },
   },
-  metadataBase: new URL("https://localhost:3000/"),
+  metadataBase: new URL("https:messenger-klone.vercel.app/"),
   openGraph: {
-    url: "https://localhost:3000/",
+    url: "https:messenger-klone.vercel.app/",
     title: "Messenger Clone",
     description: "Messenger chat application",
     type: "website",

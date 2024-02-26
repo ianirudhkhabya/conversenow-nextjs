@@ -12,19 +12,19 @@ import { FullConversationType } from "@/types";
 import { pusherClient } from "@/libs/pusher";
 import useConversation from "@/hooks/useConversation";
 import ConversationCard from "./ConversationCard";
-import GroupChatModal from "./GroupChatModal";
+import GroupChatModal from "@/components/modals/GroupChatModal";
 
 interface ConversationListProps {
-  initialItems: FullConversationType[];
+  initialChats: FullConversationType[];
   users: User[];
 }
 
 const ConversationList: React.FC<ConversationListProps> = ({
-  initialItems,
+  initialChats,
   users,
 }) => {
   const session = useSession();
-  const [items, setItems] = useState(initialItems);
+  const [items, setItems] = useState(initialChats);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const router = useRouter();
